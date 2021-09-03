@@ -5,11 +5,11 @@ namespace Drupal\dropsolid_dependency_injection;
 use GuzzleHttp\ClientInterface;
 
 /**
- * Class RestConnectorService.
+ * Class DropSolidRestService.
  *
  * @package Drupal\dropsolid_dependency_injection
  */
-class RestConnectorService implements RestConnectorServiceInterface {
+class DropSolidRestService implements DropSolidRestServiceInterface {
 
   /**
    * The HTTP client to fetch the Rest data.
@@ -19,7 +19,7 @@ class RestConnectorService implements RestConnectorServiceInterface {
   protected $httpClient;
 
   /**
-   * RestConnectorService constructor.
+   * DropSolidRestService constructor.
    *
    * @param \GuzzleHttp\ClientInterface $http_client
    *   The Guzzle HTTP client.
@@ -31,12 +31,13 @@ class RestConnectorService implements RestConnectorServiceInterface {
   /**
    * {@inheritDoc}
    */
-  public function getApiData(string $uri): array {
+  public function getApiData(string $uri) {
     try {
       $response = $this->httpClient->request('GET', $uri);
       $data = $response->getBody()->getContents();
+      $decoded = json_decode($data);
 
-      if (!$decoded = json_decode($data)) {
+      if (!$decoded) {
         throw new \Exception('Invalid data returned from API');
       }
     }

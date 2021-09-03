@@ -3,11 +3,11 @@
 namespace Drupal\dropsolid_dependency_injection;
 
 /**
- * Interface RestConnectorServiceInterface.
+ * Interface DropSolidRestServiceInterface.
  *
  * @package Drupal\dropsolid_dependency_injection
  */
-interface RestConnectorServiceInterface {
+interface DropSolidRestServiceInterface {
 
   /**
    * Gets rest data.
@@ -18,5 +18,5 @@ interface RestConnectorServiceInterface {
    * @return array
    *   Returns rest data or empty array if no data was received.
    */
-  public function getApiData(string $uri): array;
+  public function getApiData(string $uri);
 }
