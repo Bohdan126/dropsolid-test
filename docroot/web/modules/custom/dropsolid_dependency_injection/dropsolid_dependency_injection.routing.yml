@@ -1,4 +1,3 @@
-
 dropsolid_dependency_injection.rest_output_controller_showPhotos:
   path: '/dropsolid/example/photos'
   defaults:
