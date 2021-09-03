@@ -1,0 +1,8 @@
+services:
+  dropsolid_dependency_injection.data_service:
+    class: Drupal\dropsolid_dependency_injection\DropSolidDataService
+    arguments: []
+
+  dropsolid_dependency_injection.rest_connector:
+    class: Drupal\dropsolid_dependency_injection\RestConnectorService
+    arguments: [ '@http_client' ]
