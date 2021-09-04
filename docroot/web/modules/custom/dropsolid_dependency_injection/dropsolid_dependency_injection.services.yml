@@ -6,3 +6,9 @@ services:
   dropsolid_dependency_injection.rest_service:
     class: Drupal\dropsolid_dependency_injection\DropSolidRestService
     arguments: [ '@http_client' ]
+
+  plugin.manager.mail_override:
+    class: Drupal\dropsolid_dependency_injection\Services\DropSolidMailManager
+    decorates: plugin.manager.mail
+    decoration_priority: -99
+    arguments: [ '@plugin.manager.mail_override.inner', '@container.namespaces', '@cache.discovery', '@module_handler', '@config.factory', '@logger.factory', '@string_translation', '@renderer' ]
