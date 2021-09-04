@@ -51,23 +51,19 @@ class DropSolidBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    */
   public function build(RouteMatchInterface $route_match) {
     $breadcrumb = new Breadcrumb();
-    $full_route = $route_match->getRouteObject()->getPath();
-    $full_route = explode('/', substr($full_route, 1));
-    $link = '';
-
+    $full_path = explode('/', substr($route_match->getRouteObject()->getPath(), 1));
+    $current_link = '';
     $breadcrumb->addLink(Link::createFromRoute('Home', '<front>'));
 
-    foreach ($full_route as $element) {
-      $empty_link = NULL;
-      $link .= '/' . $element;
-      $is_route = $this->routeProvider->getRoutesByPattern($link)->count();
+    foreach ($full_path as $path) {
+      $current_link .= '/' . $path;
 
-      // Reset breadcrumb element url if route is not defined.
-      if (empty($is_route)) {
-        $empty_link = '/';
-      }
-      // Create breadcrumb element.
-      $breadcrumb->addLink(Link::fromTextAndUrl(ucfirst($element), Url::fromUserInput($empty_link ?? $link)));
+      // Check if link has route.
+      $route = $this->routeProvider->getRoutesByPattern($current_link)->count();
+      $default_link = !empty($route) ? NULL : '/';
+
+      // Add new breadcrumb element.
+      $breadcrumb->addLink(Link::fromTextAndUrl(ucfirst($path), Url::fromUserInput($default_link ?? $current_link)));
     }
 
     // Add route cache context.
