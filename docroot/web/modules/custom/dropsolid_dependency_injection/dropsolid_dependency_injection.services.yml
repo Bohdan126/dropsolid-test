@@ -8,7 +8,13 @@ services:
     arguments: [ '@http_client' ]
 
   plugin.manager.mail_override:
-    class: Drupal\dropsolid_dependency_injection\Services\DropSolidMailManager
+    class: Drupal\dropsolid_dependency_injection\DropSolidMailManager
     decorates: plugin.manager.mail
     decoration_priority: -99
     arguments: [ '@plugin.manager.mail_override.inner', '@container.namespaces', '@cache.discovery', '@module_handler', '@config.factory', '@logger.factory', '@string_translation', '@renderer' ]
+
+  dropsolid_dependency_injection.breadcrumb:
+    class: Drupal\dropsolid_dependency_injection\Breadcrumb\DropSolidBreadcrumbBuilder
+    arguments: ['@router.route_provider']
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }
