@@ -18,3 +18,7 @@ services:
     arguments: ['@router.route_provider']
     tags:
       - { name: breadcrumb_builder, priority: 100 }
+
+  dropsolid_dependency_injection_language_manager:
+    class: Drupal\dropsolid_dependency_injection\DropSolidMailManager
+    arguments: ['@language.default']
