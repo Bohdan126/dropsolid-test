@@ -12,18 +12,6 @@ class DropsolidDataService implements DropsolidDataServiceInterface {
   /**
    * {@inheritDoc}
    */
-  public function getDefaultCache() {
-    return [
-      '#cache' => [
-        'max-age' => 60,
-        'contexts' => ['url'],
-      ],
-    ];
-  }
-
-  /**
-   * {@inheritDoc}
-   */
   public function getPhotos(array $data, array &$build) {
     foreach ($data as $item) {
       $build['rest_output_block']['photos'][] = [

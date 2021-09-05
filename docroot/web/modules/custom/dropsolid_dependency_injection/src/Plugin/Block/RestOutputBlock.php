@@ -69,7 +69,13 @@ class RestOutputBlock extends BlockBase implements ContainerFactoryPluginInterfa
    * {@inheritdoc}
    */
   public function build() {
-    $build = $this->dropData->getDefaultCache();
+    $build = [
+      '#cache' => [
+        'max-age' => 60,
+        'contexts' => ['url'],
+      ],
+    ];
+
     $album_id = random_int(1, 20);
     $uri = "https://jsonplaceholder.typicode.com/albums/{$album_id}/photos";
 

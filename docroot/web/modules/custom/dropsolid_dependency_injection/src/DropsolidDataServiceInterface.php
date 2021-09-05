@@ -10,13 +10,6 @@ namespace Drupal\dropsolid_dependency_injection;
 interface DropsolidDataServiceInterface {
 
   /**
-   * Gets default cache array.
-   *
-   * @return array
-   */
-  public function getDefaultCache();
-
-  /**
    * Gets array with photos.
    *
    * @param array $data

@@ -58,7 +58,13 @@ class RestOutputController extends ControllerBase {
    *   Array with images.
    */
   public function showPhotos() {
-    $build = $this->dropData->getDefaultCache();
+    $build = [
+      '#cache' => [
+        'max-age' => 60,
+        'contexts' => ['url'],
+      ],
+    ];
+
     $uri = 'https://jsonplaceholder.typicode.com/albums/5/photos';
 
     if ($data = $this->restConnector->getApiData($uri)) {
