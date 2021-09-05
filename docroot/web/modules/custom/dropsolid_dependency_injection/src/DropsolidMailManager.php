@@ -2,13 +2,7 @@
 
 namespace Drupal\dropsolid_dependency_injection;
 
-use Drupal\Core\Cache\CacheBackendInterface;
-use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Mail\MailManager;
-use Drupal\Core\Render\RendererInterface;
-use Drupal\Core\StringTranslation\TranslationInterface;
 
 /**
  * Class DropsolidDataService.
