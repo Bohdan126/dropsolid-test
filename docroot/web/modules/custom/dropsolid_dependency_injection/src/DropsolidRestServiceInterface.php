@@ -3,11 +3,11 @@
 namespace Drupal\dropsolid_dependency_injection;
 
 /**
- * Interface DropSolidRestServiceInterface.
+ * Interface DropsolidRestServiceInterface.
  *
  * @package Drupal\dropsolid_dependency_injection
  */
-interface DropSolidRestServiceInterface {
+interface DropsolidRestServiceInterface {
 
   /**
    * Gets rest data.

@@ -4,8 +4,8 @@ namespace Drupal\dropsolid_dependency_injection\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\dropsolid_dependency_injection\DropSolidDataServiceInterface;
-use Drupal\dropsolid_dependency_injection\DropSolidRestServiceInterface;
+use Drupal\dropsolid_dependency_injection\DropsolidDataServiceInterface;
+use Drupal\dropsolid_dependency_injection\DropsolidRestServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -19,16 +19,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class RestOutputBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * DropSolid service to obtain data.
+   * Dropsolid service to obtain data.
    *
-   * @var \Drupal\dropsolid_dependency_injection\DropSolidDataServiceInterface
+   * @var \Drupal\dropsolid_dependency_injection\DropsolidDataServiceInterface
    */
   protected $dropData;
 
   /**
-   * DropSolid service to connect for rest.
+   * Dropsolid service to connect for rest.
    *
-   * @var \Drupal\dropsolid_dependency_injection\DropSolidRestServiceInterface
+   * @var \Drupal\dropsolid_dependency_injection\DropsolidRestServiceInterface
    */
   protected $restConnector;
 
@@ -41,12 +41,12 @@ class RestOutputBlock extends BlockBase implements ContainerFactoryPluginInterfa
    *   The plugin_id for the plugin instance.
    * @param array $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\dropsolid_dependency_injection\DropSolidDataServiceInterface $drop_data_service
-   *   DropSolid service to obtain data.
-   * @param \Drupal\dropsolid_dependency_injection\DropSolidRestServiceInterface $rest_service
-   *   DropSolid service to connect for rest.
+   * @param \Drupal\dropsolid_dependency_injection\DropsolidDataServiceInterface $drop_data_service
+   *   Dropsolid service to obtain data.
+   * @param \Drupal\dropsolid_dependency_injection\DropsolidRestServiceInterface $rest_service
+   *   Dropsolid service to connect for rest.
    */
-  public function __construct(array $configuration, string $plugin_id, array $plugin_definition, DropSolidDataServiceInterface $drop_data_service, DropSolidRestServiceInterface $rest_service) {
+  public function __construct(array $configuration, string $plugin_id, array $plugin_definition, DropsolidDataServiceInterface $drop_data_service, DropsolidRestServiceInterface $rest_service) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->dropData = $drop_data_service;
     $this->restConnector = $rest_service;

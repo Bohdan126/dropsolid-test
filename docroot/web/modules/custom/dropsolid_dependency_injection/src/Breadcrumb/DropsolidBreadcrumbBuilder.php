@@ -12,7 +12,7 @@ use Drupal\Core\Url;
 /**
  * Provides a breadcrumb for Dropsolid Dependency Injection Exercise.
  */
-class DropSolidBreadcrumbBuilder implements BreadcrumbBuilderInterface {
+class DropsolidBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
   /**
    * The route provider service.
@@ -22,7 +22,7 @@ class DropSolidBreadcrumbBuilder implements BreadcrumbBuilderInterface {
   protected $routeProvider;
 
   /**
-   * The DropSolidBreadcrumbBuilder constructor.
+   * The DropsolidBreadcrumbBuilder constructor.
    *
    * @param \Drupal\Core\Routing\RouteProviderInterface $route_provider
    *   The route provider service.

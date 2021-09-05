@@ -11,11 +11,11 @@ use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\StringTranslation\TranslationInterface;
 
 /**
- * Class DropSolidDataService.
+ * Class DropsolidDataService.
  *
  * @package Drupal\dropsolid_dependency_injection
  */
-class DropSolidMailManager extends MailManager {
+class DropsolidMailManager extends MailManager {
 
   /**
    * The config factory.

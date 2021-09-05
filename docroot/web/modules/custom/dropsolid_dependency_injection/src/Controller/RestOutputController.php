@@ -3,8 +3,8 @@
 namespace Drupal\dropsolid_dependency_injection\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\dropsolid_dependency_injection\DropSolidDataServiceInterface;
-use Drupal\dropsolid_dependency_injection\DropSolidRestServiceInterface;
+use Drupal\dropsolid_dependency_injection\DropsolidDataServiceInterface;
+use Drupal\dropsolid_dependency_injection\DropsolidRestServiceInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -15,28 +15,28 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class RestOutputController extends ControllerBase {
 
   /**
-   * DropSolid service to obtain data.
+   * Dropsolid service to obtain data.
    *
-   * @var \Drupal\dropsolid_dependency_injection\DropSolidDataServiceInterface
+   * @var \Drupal\dropsolid_dependency_injection\DropsolidDataServiceInterface
    */
   protected $dropData;
 
   /**
-   * DropSolid service to connect for rest.
+   * Dropsolid service to connect for rest.
    *
-   * @var \Drupal\dropsolid_dependency_injection\DropSolidRestServiceInterface
+   * @var \Drupal\dropsolid_dependency_injection\DropsolidRestServiceInterface
    */
   protected $restConnector;
 
   /**
    * RestOutputController constructor.
    *
-   * @param \Drupal\dropsolid_dependency_injection\DropSolidDataServiceInterface $drop_data_service
-   *   DropSolid service to obtain data.
-   * @param \Drupal\dropsolid_dependency_injection\DropSolidRestServiceInterface $rest_service
-   *   DropSolid service to connect for rest.
+   * @param \Drupal\dropsolid_dependency_injection\DropsolidDataServiceInterface $drop_data_service
+   *   Dropsolid service to obtain data.
+   * @param \Drupal\dropsolid_dependency_injection\DropsolidRestServiceInterface $rest_service
+   *   Dropsolid service to connect for rest.
    */
-  public function __construct(DropSolidDataServiceInterface $drop_data_service, DropSolidRestServiceInterface $rest_service) {
+  public function __construct(DropsolidDataServiceInterface $drop_data_service, DropsolidRestServiceInterface $rest_service) {
     $this->dropData = $drop_data_service;
     $this->restConnector = $rest_service;
   }

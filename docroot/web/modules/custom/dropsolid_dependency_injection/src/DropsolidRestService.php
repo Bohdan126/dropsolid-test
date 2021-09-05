@@ -5,11 +5,11 @@ namespace Drupal\dropsolid_dependency_injection;
 use GuzzleHttp\ClientInterface;
 
 /**
- * Class DropSolidRestService.
+ * Class DropsolidRestService.
  *
  * @package Drupal\dropsolid_dependency_injection
  */
-class DropSolidRestService implements DropSolidRestServiceInterface {
+class DropsolidRestService implements DropsolidRestServiceInterface {
 
   /**
    * The HTTP client to fetch the Rest data.
@@ -19,7 +19,7 @@ class DropSolidRestService implements DropSolidRestServiceInterface {
   protected $httpClient;
 
   /**
-   * DropSolidRestService constructor.
+   * DropsolidRestService constructor.
    *
    * @param \GuzzleHttp\ClientInterface $http_client
    *   The Guzzle HTTP client.

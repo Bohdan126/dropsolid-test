@@ -3,11 +3,11 @@
 namespace Drupal\dropsolid_dependency_injection;
 
 /**
- * Interface DropSolidDataServiceInterface.
+ * Interface DropsolidDataServiceInterface.
  *
  * @package Drupal\dropsolid_dependency_injection
  */
-interface DropSolidDataServiceInterface {
+interface DropsolidDataServiceInterface {
 
   /**
    * Gets default cache array.

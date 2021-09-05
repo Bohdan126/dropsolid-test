@@ -1,24 +1,24 @@
 services:
   dropsolid_dependency_injection.data_service:
-    class: Drupal\dropsolid_dependency_injection\DropSolidDataService
+    class: Drupal\dropsolid_dependency_injection\DropsolidDataService
     arguments: []
 
   dropsolid_dependency_injection.rest_service:
-    class: Drupal\dropsolid_dependency_injection\DropSolidRestService
+    class: Drupal\dropsolid_dependency_injection\DropsolidRestService
     arguments: [ '@http_client' ]
 
   plugin.manager.mail_override:
-    class: Drupal\dropsolid_dependency_injection\DropSolidMailManager
+    class: Drupal\dropsolid_dependency_injection\DropsolidMailManager
     decorates: plugin.manager.mail
     decoration_priority: -99
     arguments: [ '@plugin.manager.mail_override.inner', '@container.namespaces', '@cache.discovery', '@module_handler', '@config.factory', '@logger.factory', '@string_translation', '@renderer' ]
 
   dropsolid_dependency_injection.breadcrumb:
-    class: Drupal\dropsolid_dependency_injection\Breadcrumb\DropSolidBreadcrumbBuilder
+    class: Drupal\dropsolid_dependency_injection\Breadcrumb\DropsolidBreadcrumbBuilder
     arguments: ['@router.route_provider']
     tags:
       - { name: breadcrumb_builder, priority: 100 }
 
   dropsolid_dependency_injection_language_manager:
-    class: Drupal\dropsolid_dependency_injection\DropSolidMailManager
+    class: Drupal\dropsolid_dependency_injection\DropsolidMailManager
     arguments: ['@language.default']

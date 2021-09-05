@@ -5,10 +5,10 @@ namespace Drupal\dropsolid_dependency_injection;
 use Drupal\Core\Language\LanguageManager;
 
 /**
- * Class DropSolidLanguageManager.
+ * Class DropsolidLanguageManager.
  *
  * @package Drupal\dropsolid_dependency_injection
  */
-class DropSolidLanguageManager extends LanguageManager {
+class DropsolidLanguageManager extends LanguageManager {
 
 }

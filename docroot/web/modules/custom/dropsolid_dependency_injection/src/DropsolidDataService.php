@@ -3,11 +3,11 @@
 namespace Drupal\dropsolid_dependency_injection;
 
 /**
- * Class DropSolidDataService.
+ * Class DropsolidDataService.
  *
  * @package Drupal\dropsolid_dependency_injection
  */
-class DropSolidDataService implements DropSolidDataServiceInterface {
+class DropsolidDataService implements DropsolidDataServiceInterface {
 
   /**
    * {@inheritDoc}
